@@ -37,7 +37,7 @@ class  SearchResult extends Component {
    
         <Fragment>
             
-             { this.results() } 
+           { this.results() }
              
             <UserList repoUser = { this.state.repoUser } />
        
