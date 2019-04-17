@@ -4,7 +4,7 @@ export default axios.create({
     baseURL: `https://api.github.com`,
     headers: { 
                 contentType: `application/json`,
-                Authorization: `token ${ token }`,
-                
+                Authorization: `${token}`,
             }
 });
+

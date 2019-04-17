@@ -45,7 +45,7 @@ class SearchBar extends Component {
                          onChange={ (e) => { this.onInputChange(e) } }
                          value={ this.state.term.toUpperCase() }
                          placeholder="Search ..." />
-                           <i class="search icon"></i>
+                           <i className="search icon"></i>
                     </div>
                     
 </div>
