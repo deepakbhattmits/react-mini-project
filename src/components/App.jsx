@@ -11,7 +11,6 @@ class App extends Component {
     }
     getData = async ( e ) => {
         // e.preventDefault();
-        console.log('TEST :',e.target.value);
         // const term = e.target.elements.termInput.value;
         const term = e.target.value;
         const response =  await github.get(`/users/${term}`);
