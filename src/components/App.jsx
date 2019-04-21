@@ -7,7 +7,8 @@ import SearchResult from './SearchResult'
 class App extends Component {
     state = { 
                 repos: [],
-                status: false
+                status: false,
+                classSearch: ''
     }
     getData = async ( e ) => {
         // e.preventDefault();
@@ -17,7 +18,7 @@ class App extends Component {
     
         const repos = response.data;
        // console.log(repos);
-        this.setState({ repos: repos, status: Object.entries(repos).length > 0 }); 
+        this.setState({ repos: repos, status: Object.entries(repos).length > 0, classSearch: 'loading'}); 
      }
    
         
@@ -29,8 +30,8 @@ class App extends Component {
                     
                         <div className="ui container">
                 <div className="row">
-                        <SearchBar getData = { this.getData  } />
-                        <SearchResult repos={ this.state.repos } status= { this.state.status }/>
+                        <SearchBar getData = { this.getData  } class= { this.state.classSearch } />
+                        <SearchResult repos={ this.state.repos } status= { this.state.status } />
                        
                        
                              

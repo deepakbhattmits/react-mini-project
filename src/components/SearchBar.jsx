@@ -37,21 +37,20 @@ class SearchBar extends Component {
            
                 <div className="ui segment" style={ {marginTop:'10px'} }>
                {/* <form onSubmit={this.props.getData}> */}
-                    <div className="ui search">
+                    <div className={`ui search ${ this.props.class }`}>
                         <div className="ui icon input">
-                        <label>Search Here </label>
-                        <input 
+                            <input 
                             className="prompt"
                             type="text"
                             placeholder="Search ..."
                             name="termInput"
                             autoComplete='off'
                             onChange={ this.props.getData }
-                        />
-                        <i className="search icon"></i>
+                            />
+                            <i className="search icon"></i>
                         </div>
-
-                        </div>
+                   
+                    </div>
                 {/* </form>    */}
                  
                 </div>
