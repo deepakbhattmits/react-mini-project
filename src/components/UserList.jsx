@@ -1,4 +1,4 @@
-import React, { Component, Fragment }  from 'react';
+import React, { Component }  from 'react';
 class  UserList extends Component {
     renderUser = () => {
         // console.log("TEST userlist: ",this.props.repoUser);
@@ -7,7 +7,7 @@ class  UserList extends Component {
         }
         // const { id, name, avatar_url, public_repos, followers, location } = this.props.repoUser;
         return (
-            <div className="ui link cards">
+            
                 <div className="card" id={ this.props.repoUser.id }>
                     <div className="image">
                         <img src={  this.props.repoUser.avatar_url } alt={  this.props.repoUser.name } />
@@ -27,15 +27,15 @@ class  UserList extends Component {
                         </span>
                     </div>
                 </div>
-            </div>
         );
     };      
         render () {
+            // console.log(this.props.repoUser);
           
         return (
-            <Fragment>
+                <div className="ui link cards">
                 { this.renderUser() }
-            </Fragment>
+                </div>
         );
        
         }

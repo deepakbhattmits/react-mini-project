@@ -6,36 +6,20 @@ import SearchResult from './SearchResult'
 
 class App extends Component {
     state = { 
-                repos: []
+                repos: [],
+                status: false
     }
-    onSearchChange = async ( term ) => {
-      
+    getData = async ( e ) => {
+        e.preventDefault();
+        const term = e.target.elements.termInput.value;
         const response =  await github.get(`/users/${term}`);
-      
-        const repos = response.data;
-        // const theUrl =  `${github}/users/${ term }`; 
-        // var xmlHttp = new XMLHttpRequest();
-        //     xmlHttp.open( "GET", theUrl, true ); // false for synchronous request
-        //     xmlHttp.send( null );
-        // const repos =  xmlHttp.responseText;
-            
-            
-                this.setState({ repos: repos }); 
-  
-    }
-    // onSearchChange = ( term ) => {
-       
-           
-    //         const user = term;
-    //         if (user) {
-    //           axios.get(`https://api.github.com/users/${user}`)
-    //           .then((res) => {
-    //             const repos = res.data.public_repos;
-    //             this.setState({ repos });
-    //           })
-    //         } else return;
-    // }
     
+        const repos = response.data;
+       // console.log(repos);
+        this.setState({ repos: repos, status: Object.entries(repos).length > 0 }); 
+     }
+   
+        
     render () {
        
         return (
@@ -44,8 +28,12 @@ class App extends Component {
                     
                         <div className="ui container">
                 <div className="row">
-                        <SearchBar onChange = { this.onSearchChange  } />
-                        <SearchResult repos={ this.state.repos } />
+                        <SearchBar getData = { this.getData  } />
+                        <SearchResult repos={ this.state.repos } status= { this.state.status }/>
+                       
+                       
+                             
+                           
                 </div>
             </div>
                     </div>

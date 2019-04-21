@@ -5,7 +5,6 @@ class  SearchResult extends Component {
         repoUser: []
     }
     renderList = ( ) => {
-                
             this.setState({ 
                  repoUser: this.props.repos
                 })
@@ -15,18 +14,22 @@ class  SearchResult extends Component {
     results = () => {
         
         if(Object.keys(this.props.repos).length === false ) {
-          return null; 
+          return <div>Loading....</div>; 
         } 
         const  { login, id } = this.props.repos;
         
         return (
-            <div className="ui relaxed divided list">
-            <button className="ui basic button" onClick={ this.renderList }>        
-                <div id={ id }>
-                    <span>{ login }</span>
-                </div>
-            </button>
-             </div>
+            
+               
+                    <button className="ui basic button" onClick={ this.renderList }>        
+                        <div id={ id }>
+                            <span>{ login }</span>
+                        </div>
+                        
+                    </button>
+                
+               
+           
         );
   };  
   
@@ -35,13 +38,20 @@ class  SearchResult extends Component {
 
     return (
    
-        <Fragment>
-            
-           { this.results() }
-             
-            <UserList repoUser = { this.state.repoUser } />
-       
-        </Fragment>
+     <Fragment>
+           { Object.keys(this.props.repos).length ?
+             <div className="ui relaxed divided list">
+                { this.results() }    
+             </div> 
+            : ''            
+           }
+           { this.state.repoUser.length !== 0  ? 
+            <UserList repoUser = { this.state.repoUser } /> 
+            :
+            '' }           
+           
+           </Fragment>
+      
         
       
 );
