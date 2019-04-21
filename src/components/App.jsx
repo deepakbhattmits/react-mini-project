@@ -8,7 +8,7 @@ class App extends Component {
     state = { 
                 repos: [],
                 status: false,
-                classSearch: ''
+                classSearch: false
     }
     getData = async ( e ) => {
         // e.preventDefault();
@@ -18,7 +18,7 @@ class App extends Component {
     
         const repos = response.data;
        // console.log(repos);
-        this.setState({ repos: repos, status: Object.entries(repos).length > 0, classSearch: 'loading'}); 
+        this.setState({ repos: repos, status: Object.entries(repos).length > 0, classSearch: Object.entries(repos).length > 0}); 
      }
    
         

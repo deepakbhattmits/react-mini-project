@@ -37,7 +37,7 @@ class SearchBar extends Component {
            
                 <div className="ui segment" style={ {marginTop:'10px'} }>
                {/* <form onSubmit={this.props.getData}> */}
-                    <div className={`ui search ${ this.props.class }`}>
+                    <div className={`${ this.props.class === true ? ' ui search loading ' : 'ui search' }`}>
                         <div className="ui icon input">
                             <input 
                             className="prompt"
