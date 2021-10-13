@@ -12,12 +12,10 @@ class App extends Component {
     }
     getData = async ( e ) => {
         // e.preventDefault();
-        // const term = e.target.elements.termInput.value;
         const term = e.target.value;
-        const response =  await github.get(`/users/${term}`);
-    
+        const response = await github.get(`/users/${term}`);
         const repos = response.data;
-       // console.log(repos);
+       console.log('repos : ',repos);
         this.setState({ repos: repos, status: Object.entries(repos).length > 0, classSearch: Object.entries(repos).length > 0}); 
      }
    
