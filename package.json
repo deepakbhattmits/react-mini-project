@@ -2,13 +2,14 @@
   "name": "react-project-mini",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://api.github.com",
   "dependencies": {
-    "axios": "^0.18.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "axios": "^0.22.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-redux": "^7.0.1",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8",
+    "react-scripts": "4.0.3",
     "redux": "^4.0.1"
   },
   "scripts": {
